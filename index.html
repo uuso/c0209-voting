@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Страница головосования</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="scripts/voting_scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center text-danger my-5">
+                <h1>Выбери своего питомца!</h1>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 d-flex justify-content-between">
+                <form action="./vote_results.html" method="get">
+                    <button id="cats-btn" class="btn btn-primary"><img src="https://findicons.com/icon/download/14469/hp_cat/128/png" alt="Голос за котиков!"></button>
+                    <button id="dogs-btn" class="btn btn-warning"><img src="https://findicons.com/icon/download/14435/hp_dog/128/png" alt="Голос за псов!"></button>
+                    <button id="parrots-btn" class="btn btn-success"><img src="https://findicons.com/icon/download/14365/hp_recycle_bin_1_empty/128/png" alt="Голос за попугаев?!"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("#cats-btn").addEventListener("click", voteFor.bind(null, "cats"));
+            // document.querySelector("#cats-btn").addEventListener("click", () => window.location.href = "./vote_results.html");
+            document.querySelector("#dogs-btn").addEventListener("click", voteFor.bind(null, "dogs"));
+            // document.querySelector("#dogs-btn").addEventListener("click", () => window.location.href = "./vote_results.html");
+            document.querySelector("#parrots-btn").addEventListener("click", voteFor.bind(null, "parrots"));
+            // document.querySelector("#parrots-btn").addEventListener("click", () => { window.location.href = "./vote_results.html" });
+        });    
+    </script>
+</body>
+</html>
